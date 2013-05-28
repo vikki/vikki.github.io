@@ -1,2 +1,7 @@
 <link rel="stylesheet" href="../../../stylesheets/pygments.css"></link>
-<p> Boom! </p>
+<style>
+   /* temporary until i get a theme or some design skills or something */
+   body {
+      font-family: arial, helvetica, Verdana, sans-serif;
+   }
+</style>
