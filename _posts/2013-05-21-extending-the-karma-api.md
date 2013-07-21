@@ -2,9 +2,6 @@
 layout: post
 title: Extending the karma api
 ---
-{% include header.ext %}
-
-# Extending the karma api
 
 #### tl;dr - karma uses futures to drive your tests, so if you want to extend their API, you'll need to as well. Code sample [here](#howdoesthathelp)
 
@@ -14,8 +11,9 @@ So, we've started using angular.js for a project in work, and whilst we've mostl
 Say you want to have a test perform a comparison on something that *is* available in the browser (I'm just going to flat out ignore x-browser compatibility to keep this short, but you may want to think about it :P), but isn't available via the karma api. This happened to us as we wanted to verify that angular didn't affect the browser history, and figured that the history api might be a cool way to do this. 
 
 Say we define this in pseudo code like so :
-- do some stuff which could add to the browser history
-- verify the current browser history is 1
+
+* do some stuff which could add to the browser history
+* verify the current browser history is 1
 
 We might try to implement it like this : 
 {% highlight javascript linenos %}
@@ -31,10 +29,11 @@ it('does some stuff without affecting the browser history', function() {
 That's all well and good, except for the bit where it doesn't actually work. :( After some serious poking around in the karma code, I discovered that expect takes a future on the left hand side (you might say you have to pass dee future on dee left hand side, but I digress :P). In fact, to clarify, it will run, and won't chuck any errors, but won't behave how you might want it to, again because of the way karma runs your tests. Karma will set up your test using futures, which includes both the expect statements, and any interactions driven from your test (for example telling the test to register a click on the element, like we're doing here). All that happens on the first pass of the test is the creation of these futures, defining the test run. At the end of the test, karma will resolve those futures, in the order in which they were defined, and *that* is when the interactions and verifications actually happen.
 
 So our previous test will actually do the following:
-- setup the do-ing of some stuff which could add to the browser history
-- inspect the browser history
-- actually do some stuff which could add to the browser history
-- verify the old browser history length (from before we do the stuff that might add to the history!)
+
+* setup the do-ing of some stuff which could add to the browser history
+* inspect the browser history
+* actually do some stuff which could add to the browser history
+* verify the old browser history length (from before we do the stuff that might add to the history!)
 
 What's more, as karma is expecting a future on the left hand side, its going to do future-y stuff to whatever you pass in, which in our case is actually an int, so that isn't gonna fly, and will ultimately result in the LHS of our comparison being undefined. ARGH!
 
@@ -122,4 +121,4 @@ and now it should actually work, both in terms of ordering and not guessing how 
 
 # Yay <a name="yay"></a>
 
-So hopefully that goes some way to explaining how the karma API works, and how to work with it to solve non-standard problems. If you have any questions/comments/heckling please [say hello @vikkiread](https://twitter.com/vikkiread)
+So hopefully that goes some way to explaining how the karma API works, and how to work with it to solve non-standard problems. 
