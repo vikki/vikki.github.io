@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /about/index.html
-title: About me!
+title: Saying hello!
 tags: [about]
 ---
 

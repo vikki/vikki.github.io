@@ -3,7 +3,8 @@ layout: post
 title: Acceptance Testing with Expo
 date: '2020-01-10'
 description: How to run acceptance tests using appium whilst running a local build.
-categories: [react-native, appium, expo, acceptance-testing, testing, android]
+categories: [learning,about]
+tags: [react-native, appium, expo, acceptance-testing, testing, android]
 ---
 
 #### tl;dr - Acceptance testing an Android-based Expo local build with appium requires you to set up capabilities that start the app using a custom intent, rather than the standard activity intent. [Skip to how to do it](#doit)

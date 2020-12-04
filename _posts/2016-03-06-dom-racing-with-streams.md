@@ -3,7 +3,8 @@ layout: post
 title: Dom Racing with Streams
 date: '2016-03-06'
 description: Adventures in modelling async logic that interacts with each other as promises, and as streams.
-categories: [streams, promises, rxjs]
+categories: [learning,about]
+tags: [streams, promises, rxjs, javascript]
 ---
 
 *Adventures in modelling async logic that interacts with each other as promises, and as streams*

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Extending the karma api
+categories: [learning,about]
+tags: [testing, acceptance-testing, promises, javascript]
 ---
 
 #### tl;dr - karma uses futures to drive your tests, so if you want to extend their API, you'll need to as well. Code sample [here](#howdoesthathelp)

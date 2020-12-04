@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Why You Should use theintern
+title: Persuading you to use theintern
 date: '2013-07-22'
 description: What is theintern? What's cool about it? What's it for?
-categories: [testing, acceptance-testing, javascript, node, theintern]
+categories: [learning,about]
+tags: [testing, acceptance-testing, javascript, node, theintern]
 ---
 
 Intern allows you to write both unit tests and acceptance tests, and its a nice test runner for x-browser unit tests, but its been possible to do that for a while with awesome tools like [bunyip](https://github.com/ryanseddon/bunyip). What I'm most excited about is their API for writing acceptance tests, which allows you to create BDD-style, promise-based tests in javascript, and then configure them separately to run against as many browsers as SauceLabs can provide. This post will be an overview of what it is and what it does, which I am hoping to follow up with some details on how to get started. Until I get round to that though, check out their [wiki](https://github.com/theintern/intern/wiki) and [tutorial](https://github.com/bitpshr/intern-tutorial) .

@@ -3,7 +3,8 @@ layout: post
 title: Displaying YouTube video in WebGL
 date: '2012-07-28'
 description: My adventures getting YouTube videos to display on WebGL canvas
-categories: [webgl, youtube, video, html5]
+categories: [learning,about]
+tags: [webgl, youtube, video, html5]
 ---
 
 *My adventures in getting YouTube videos to display on a 3D WebGL canvas.*
